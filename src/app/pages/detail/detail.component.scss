@@ -1,0 +1,36 @@
+.detail-container {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.fact-detail-card {
+  max-width: 600px;
+  width: 100%;
+}
+
+.fact-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  text-align: justify;
+}
+
+.fact-meta {
+  margin-bottom: 0.5rem;
+}
+
+.fact-meta small {
+  color: #666;
+}
+
+.not-found {
+  padding: 2rem;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .detail-container {
+    padding: 1rem;
+  }
+}
