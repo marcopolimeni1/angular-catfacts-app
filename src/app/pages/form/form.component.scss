@@ -17,8 +17,148 @@ mat-form-field {
   margin-bottom: 1rem;
 }
 
+/* Stili personalizzati per il tema felino 🐱 */
+
+// Stili per il testo all'interno della textarea
+.mat-mdc-form-field {
+  .mat-mdc-input-element {
+    color: var(--text-dark) !important;
+    font-family: 'Quicksand', sans-serif !important;
+    font-weight: 500 !important;
+    font-size: 1rem !important;
+    line-height: 1.5 !important;
+  }
+
+  // Placeholder personalizzato
+  .mat-mdc-input-element::placeholder {
+    color: var(--text-light) !important;
+    font-style: italic !important;
+    opacity: 0.8 !important;
+  }
+
+  // Label personalizzata
+  .mat-mdc-floating-label {
+    color: var(--primary-orange) !important;
+    font-family: 'Quicksand', sans-serif !important;
+    font-weight: 600 !important;
+  }
+
+  // Outline del campo
+  .mat-mdc-notch-outline__notch {
+    border-color: var(--primary-orange) !important;
+  }
+
+  .mat-mdc-notch-outline__leading,
+  .mat-mdc-notch-outline__trailing {
+    border-color: var(--accent-gold) !important;
+  }
+
+  // Focus state
+  &.mat-focused {
+    .mat-mdc-notch-outline__notch,
+    .mat-mdc-notch-outline__leading,
+    .mat-mdc-notch-outline__trailing {
+      border-color: var(--primary-orange) !important;
+      border-width: 2px !important;
+    }
+
+    .mat-mdc-floating-label {
+      color: var(--primary-orange) !important;
+    }
+  }
+
+  // Hover state
+  &:hover:not(.mat-focused) {
+    .mat-mdc-notch-outline__notch,
+    .mat-mdc-notch-outline__leading,
+    .mat-mdc-notch-outline__trailing {
+      border-color: var(--primary-orange) !important;
+      opacity: 0.8;
+    }
+  }
+}
+
+// Hint text (contatore caratteri)
+.mat-mdc-form-field-hint {
+  color: var(--text-light) !important;
+  font-family: 'Quicksand', sans-serif !important;
+  font-weight: 500 !important;
+  font-size: 0.875rem !important;
+}
+
+// Error messages
+.mat-mdc-form-field-error {
+  color: #E74C3C !important;
+  font-family: 'Quicksand', sans-serif !important;
+  font-weight: 500 !important;
+  font-size: 0.875rem !important;
+}
+
+// Textarea specifica
+textarea.mat-mdc-input-element {
+  resize: vertical !important;
+  min-height: 120px !important;
+  
+  // Effetto di focus più accattivante
+  &:focus {
+    box-shadow: 0 0 0 3px rgba(255, 140, 66, 0.1) !important;
+    transition: box-shadow 0.3s ease !important;
+  }
+}
+
+// Animazione per il form card
+.form-card {
+  animation: slideInUp 0.5s ease-out;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Responsive design
 @media (max-width: 768px) {
   .form-container {
     padding: 1rem;
+  }
+  
+  .mat-mdc-form-field {
+    .mat-mdc-input-element {
+      font-size: 0.9rem !important;
+    }
+  }
+}
+
+// Stili aggiuntivi per migliorare l'estetica
+.mat-mdc-card-header {
+  .mat-mdc-card-title {
+    color: var(--text-dark) !important;
+    font-family: 'Quicksand', sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 1.25rem !important;
+  }
+}
+
+// Pulsanti personalizzati per mantenere coerenza
+.mat-mdc-card-actions {
+  .mat-mdc-button {
+    font-family: 'Quicksand', sans-serif !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    
+    &:not(.mat-mdc-button-disabled) {
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+    }
+    
+    &:hover:not(.mat-mdc-button-disabled) {
+      transform: translateY(-2px) !important;
+    }
   }
 }
